@@ -64,6 +64,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS进阶1.3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/" class="article-date">
+  <time datetime="2020-03-23T10:29:05.442Z" itemprop="datePublished">2020-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/">JS进阶1.3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是JavaScript的调用栈"><a href="#什么是JavaScript的调用栈" class="headerlink" title="什么是JavaScript的调用栈"></a>什么是JavaScript的调用栈</h1><ul>
+<li>JavaScript引擎正是利用栈的这种结构来管理执行上下文的。在执行上下文创建好后，JavaScript引擎会将执行上下文压入栈中，通常把这种用来<strong>管理执行上下文的栈</strong>称为执行上下文栈，又称==调用栈==。</li>
+<li>调用栈就是JS引擎追踪函数执行的一个机制</li>
+</ul>
+<h1 id="在开发中，如何利用好调用栈"><a href="#在开发中，如何利用好调用栈" class="headerlink" title="在开发中，如何利用好调用栈"></a>在开发中，如何利用好调用栈</h1><ul>
+<li><p>如何利用浏览器查看调用栈的信息：</p>
+<p><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3091621571,2227256708&fm=15&gp=0.jpg" alt="在浏览器中查看调用栈"></p>
+</li>
+</ul>
+<h1 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h1><img src="http://img3.mukewang.com/5b1278f50001286408000506.jpg" alt="栈溢出" style="zoom:80%;" />
+
+<h3 id="stack-overflow常见解决方法"><a href="#stack-overflow常见解决方法" class="headerlink" title="stack overflow常见解决方法"></a>stack overflow常见解决方法</h3><p>stack overflow一般都是堆栈内存不够<br>1.<strong>递归次数过多</strong><br>解决办法：用==循环==来代替递归一般百分之九十能解决堆栈溢出的问题</p>
+<p>2.<strong>创建的局部变量过多</strong><br>解决办法：这种情况一般就是因为局部变量没有及时清除导致的，一般也是递归，要么==把局部变量改成全局变量==，要么==传入引用==（就是再数据类型的前面加以个&amp;，这样不用去重新再子函数里面去开辟一个空间给变量了）要么==用指针==</p>
+<p>3.<strong>数组开的过大</strong><br>解决办法：用 ==关键字 new 来动态的分配一个空间给数据==<br>例如： int a = new int[20000]，这样也可以一定程度的解决问题<br>这种方法也可以提高运行速度，但是会牺牲一些内存：</p>
+<h3 id="Windows程序的内存机制"><a href="#Windows程序的内存机制" class="headerlink" title="Windows程序的内存机制"></a>Windows程序的内存机制</h3><p>全局变量(局部的静态变量本质也属于此范围)存储于<strong>堆内存,该段内存较大,一般不会溢出</strong>;函数地址、函数参数、局部变量等信息存储于栈内存，<strong>栈内存较小容易发生溢出现象，但是效率高。</strong> </p>
+<h3 id="栈溢出的可能原因："><a href="#栈溢出的可能原因：" class="headerlink" title="栈溢出的可能原因："></a><strong>栈溢出的可能原因：</strong></h3><p><strong>1. 函数递归调用层次过深</strong> ，每调用一次，函数的参数、局部变量等信息就压一次栈，并且没有及时出栈。<br><strong>2. 局部变量体积太大</strong> </p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a><strong>解决方案：</strong></h3><p><strong>1.把递归调用函数改用while或者for==循环==来实现</strong> 。<br><strong>2.通过==尾递归优化==</strong>。<br><strong>3.==改用堆内存==</strong>，函数里定义很大的局部变量（例如大数组），这种情况可以将局部变量改为静态变量（实质上也是全局变量）。<br><strong>4.==增大栈的大小值==</strong>。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>每调用一个函数。JavaScript引擎会为其创建执行上下文，并把该执行上下文压入调用栈，然后JavaScript引擎开始执行函数代码</li>
+<li>如果在一个函数A中调用了另一个函数B，那么JavaScript引擎会为B函数创建执行上下文，并将B函数的执行上下文压入栈顶</li>
+<li>当前函数执行完毕后，JavaScript引擎会将该函数的执行上下文弹出栈</li>
+<li>当分配的调用栈空间被占满时，会引发”堆栈溢出”问题</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/" data-id="ck85a9jih0000f4vfd46fft1d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS进阶1.2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.2/" class="article-date">
@@ -415,6 +474,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/">JS进阶1.3</a>
+          </li>
         
           <li>
             <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.2/">JS进阶1.2</a>
