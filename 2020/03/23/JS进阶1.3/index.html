@@ -7,17 +7,18 @@
   
   <title>JS进阶1.3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是JavaScript的调用栈 JavaScript引擎正是利用栈的这种结构来管理执行上下文的。在执行上下文创建好后，JavaScript引擎会将执行上下文压入栈中，通常把这种用来管理执行上下文的栈称为执行上下文栈，又称&#x3D;&#x3D;调用栈&#x3D;&#x3D;。 调用栈就是JS引擎追踪函数执行的一个机制  在开发中，如何利用好调用栈 如何利用浏览器查看调用栈的信息：    栈溢出  stack overflow常见解决">
+  <meta name="description" content="什么是JavaScript的调用栈 JavaScript引擎正是利用栈的这种结构来管理执行上下文的。在执行上下文创建好后，JavaScript引擎会将执行上下文压入栈中，通常把这种用来管理执行上下文的栈称为执行上下文栈，又称&#x3D;&#x3D;调用栈&#x3D;&#x3D;。 调用栈就是JS引擎追踪函数执行的一个机制  在开发中，如何利用好调用栈 如何利用浏览器查看调用栈的信息：   使用 consol.trace() 来输出当前的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS进阶1.3">
 <meta property="og:url" content="http://yoursite.com/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是JavaScript的调用栈 JavaScript引擎正是利用栈的这种结构来管理执行上下文的。在执行上下文创建好后，JavaScript引擎会将执行上下文压入栈中，通常把这种用来管理执行上下文的栈称为执行上下文栈，又称&#x3D;&#x3D;调用栈&#x3D;&#x3D;。 调用栈就是JS引擎追踪函数执行的一个机制  在开发中，如何利用好调用栈 如何利用浏览器查看调用栈的信息：    栈溢出  stack overflow常见解决">
+<meta property="og:description" content="什么是JavaScript的调用栈 JavaScript引擎正是利用栈的这种结构来管理执行上下文的。在执行上下文创建好后，JavaScript引擎会将执行上下文压入栈中，通常把这种用来管理执行上下文的栈称为执行上下文栈，又称&#x3D;&#x3D;调用栈&#x3D;&#x3D;。 调用栈就是JS引擎追踪函数执行的一个机制  在开发中，如何利用好调用栈 如何利用浏览器查看调用栈的信息：   使用 consol.trace() 来输出当前的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3091621571,2227256708&fm=15&gp=0.jpg">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/945149/202001/945149-20200103195810005-1761393826.png">
 <meta property="og:image" content="http://img3.mukewang.com/5b1278f50001286408000506.jpg">
 <meta property="article:published_time" content="2020-03-23T10:29:05.442Z">
-<meta property="article:modified_time" content="2020-03-24T02:29:00.767Z">
+<meta property="article:modified_time" content="2020-03-24T02:51:50.103Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3091621571,2227256708&fm=15&gp=0.jpg">
@@ -98,6 +99,9 @@
 <h1 id="在开发中，如何利用好调用栈"><a href="#在开发中，如何利用好调用栈" class="headerlink" title="在开发中，如何利用好调用栈"></a>在开发中，如何利用好调用栈</h1><ul>
 <li><p>如何利用浏览器查看调用栈的信息：</p>
 <p><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3091621571,2227256708&fm=15&gp=0.jpg" alt="在浏览器中查看调用栈"></p>
+</li>
+<li><p>使用 consol.trace() 来输出当前的函数调用关系 ：</p>
+<p><img src="https://img2018.cnblogs.com/blog/945149/202001/945149-20200103195810005-1761393826.png" alt="trace"></p>
 </li>
 </ul>
 <h1 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h1><img src="http://img3.mukewang.com/5b1278f50001286408000506.jpg" alt="栈溢出" style="zoom:80%;" />
