@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JS进阶1.4 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS中变量的作用域 作用域： 作用域是指在程序中定义变量的区域，该位置决定了变量的生命周期。通俗地理解，作用域就是变量与函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。   1.在js中，变量的定义并不是以代码块作为作用域的，而是以&#x3D;&#x3D;函数&#x3D;&#x3D;作为作用域。也就是说，如果变量是在某个函数中定义的，那么，它在函数以外的地方是不可见的。但是，如果该变量是定义在if或者for这样的代码块中，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS进阶1.4">
+<meta property="og:url" content="http://yoursite.com/2020/03/24/JS%E8%BF%9B%E9%98%B61.4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JS中变量的作用域 作用域： 作用域是指在程序中定义变量的区域，该位置决定了变量的生命周期。通俗地理解，作用域就是变量与函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。   1.在js中，变量的定义并不是以代码块作为作用域的，而是以&#x3D;&#x3D;函数&#x3D;&#x3D;作为作用域。也就是说，如果变量是在某个函数中定义的，那么，它在函数以外的地方是不可见的。但是，如果该变量是定义在if或者for这样的代码块中，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-24T02:59:38.847Z">
+<meta property="article:modified_time" content="2020-03-24T14:26:45.379Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS进阶1.4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/24/JS%E8%BF%9B%E9%98%B61.4/" class="article-date">
+  <time datetime="2020-03-24T02:59:38.847Z" itemprop="datePublished">2020-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS进阶1.4
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JS中变量的作用域"><a href="#JS中变量的作用域" class="headerlink" title="JS中变量的作用域"></a>JS中变量的作用域</h1><ul>
+<li><p>作用域：</p>
+<p>作用域是指在程序中定义变量的区域，该位置决定了变量的生命周期。通俗地理解，作用域就是变量与函数的可访问范围，即作用域控制着变量和函数的可见性和生命周期。</p>
+</li>
+</ul>
+<p>1.在js中，变量的定义并<strong>不是以代码块作为作用域</strong>的，而是<strong>以==函数==作为作用域</strong>。也就是说，如果变量是在某个函数中定义的，那么，它在函数以外的地方是不可见的。<code>但是，如果该变量是定义在if或者for这样的代码块中，它在代码块之外是可见的。</code></p>
+<p>2.在js中，术语“<strong>全局变量</strong>”指的是==定义在所有函数之外==的变量（也就是定义在全局代码中的变量），与之相对的是“<strong>局部变量</strong>”，所指的是==在某个函数中定义的==变量。其中，<code>函数内的代码可以像访问自己的局部变量那样访问全局变量，反之则不行。</code></p>
+<h1 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h1><ul>
+<li>JS中作用域有：全局作用域、函数作用域。没有块作用域的概念。ECMAScript 6(简称ES6)中新增了块级作用域。<br>==块作用域由 { } 包括==，if语句和for语句里面的{ }也属于块作用域。 </li>
+</ul>
+<h1 id="var、let、const的区别"><a href="#var、let、const的区别" class="headerlink" title="var、let、const的区别"></a>var、let、const的区别</h1><ul>
+<li><p>变量提升（<strong>Hoisting</strong>），简单定义</p>
+<p><strong>变量提升： 在指定作用域里，从代码顺序上看是变量先使用后声明，但运行时变量的 “可访问性” 提升到当前作用域的顶部，其值为 undefined ，没有 “可用性”。</strong></p>
+</li>
+</ul>
+<ol>
+<li><p>var定义的变量，没有块的概念，可以跨块访问, ==不能跨函数访问==， 有变量提升。 </p>
+</li>
+<li><p>let定义的变量，==只能在块作用域里访问==，不能跨块访问，也不能跨函数访问，无变量提升，不可以重复声明。 </p>
+<p>在let声明变量前，使用该变量，它是会报错的，而不是像var那样会‘变量提升’。 ES6规定了在let声明变量前不能使用该变量。</p>
+<p><strong>注意</strong>：实际上，let是提升了的，只是规定了不能在其声明之前使用而已。这一特性叫“暂时性死区”。且这一特性，仅对遵循‘块级作用域’的命令有效（let、const）。 </p>
+</li>
+<li><p>const用来定义常量，使用时==必须初始化==(即必须赋值)，==只能在块作用域里访问==，而且==不能修改==， 无变量提升，不可以重复声明。</p>
+<p><strong>注意</strong>：const常量，指的是常量对应的内存地址不得改变，而不是对应的值不得改变，所有把应用类型的数据设置为常量，其内部的值是可以改变的，例如：const a={}; a.b=13;//不会报错 const arr=[]; arr.push(123);//不会报错 ； const 与 let 的使用规范一样，与之不同的是：const 声明的是一个常量，且这个常量必须赋值，否则会报错。 </p>
+</li>
+<li><p>同一个变量只能使用一种方式声明，不然会报错</p>
+</li>
+</ol>
+<h1 id="变量提升所带来的问题"><a href="#变量提升所带来的问题" class="headerlink" title="变量提升所带来的问题"></a>变量提升所带来的问题</h1><h4 id="1-变量容易在不被察觉的情况下被覆盖掉"><a href="#1-变量容易在不被察觉的情况下被覆盖掉" class="headerlink" title="1. 变量容易在不被察觉的情况下被覆盖掉"></a>1. 变量容易在不被察觉的情况下被覆盖掉</h4><h4 id="2-本应销毁的变量没有被销毁"><a href="#2-本应销毁的变量没有被销毁" class="headerlink" title="2. 本应销毁的变量没有被销毁"></a>2. 本应销毁的变量没有被销毁</h4><h1 id="ES6是如何解决变量提升带来的缺陷"><a href="#ES6是如何解决变量提升带来的缺陷" class="headerlink" title="ES6是如何解决变量提升带来的缺陷"></a>ES6是如何解决变量提升带来的缺陷</h1><ul>
+<li>ES6引入了let和const关键字，从而使JavaScript也能像其他语言一样拥有了块级作用域</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/24/JS%E8%BF%9B%E9%98%B61.4/" data-id="ck85ztli700011kvf402y3y1p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/24/JS%E8%BF%9B%E9%98%B61.5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS进阶1.5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS进阶1.3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/24/JS%E8%BF%9B%E9%98%B61.5/">JS进阶1.5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/24/JS%E8%BF%9B%E9%98%B61.4/">JS进阶1.4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.3/">JS进阶1.3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/23/JS%E8%BF%9B%E9%98%B61.2/">JS进阶1.2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/22/JS%E8%BF%9B%E9%98%B61.1/">JS进阶1.1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
