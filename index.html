@@ -136,7 +136,7 @@
 <p>2、将构造函数的作用域赋给新对象（将this指向这个新对象）</p>
 <p>3、执行构造函数代码（为这个新对象添加属性）</p>
 <p>可以看出，构造函数知道自己从哪里来（通过 instanceof 可以看出其既是Object的实例，又是Person的实例）</p>
-<p><strong>使用构造函主要问题就是</strong>每个方法都要在每个实例上重新创建一遍，前边的person1和person2虽然都有一个sayName的方法，但是那两个方法不是同一个function的实例。alert(person1.sayName == person2.sayName);//false<br>然而，创建两个完全同样任务的Function实例的确没有必要；况且又this对象在，根本不用在执行代码前就把函数绑定到特定对象上面。</p>
+<p><strong>使用构造函数主要问题就是</strong>每个方法都要在每个实例上重新创建一遍(==会给每一个实例对象的方法分配空间，虽然方法都是相同的==所以也比较浪费)，前边的person1和person2虽然都有一个sayName的方法，但是那两个方法不是同一个function的实例。alert(person1.sayName == person2.sayName);//false<br>然而，创建两个完全同样任务的Function实例的确没有必要；况且又this对象在，根本不用在执行代码前就把函数绑定到特定对象上面。</p>
 <p>因此产生了原型模式</p>
 <h3 id="6-通过原型模式创建对象"><a href="#6-通过原型模式创建对象" class="headerlink" title="6.通过原型模式创建对象"></a>6.通过原型模式创建对象</h3><ul>
 <li><p><strong>每个方法中都有一个原型（<code>prototype</code>），每个原型都有一个构造器（<code>constructor</code>），构造器又指向这个方法。</strong> </p>
